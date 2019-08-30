@@ -3,7 +3,6 @@ phina.namespace(function() {
 
   /**
    * @class phina.util.Map
-   * 
    */
   phina.define('phina.util.Map', {
     superClass: 'phina.display.DisplayElement',
@@ -31,7 +30,6 @@ phina.namespace(function() {
       // マップ作成
       this._createMap();
     },
-
     /**
      * マップとの衝突判定を行う
      */
@@ -77,4 +75,3 @@ phina.namespace(function() {
     }
   });
 });
-
