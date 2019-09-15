@@ -66,7 +66,11 @@ phina.namespace(function() {
         piece.physical.velocity = phina.geom.Vector2().fromDegree(elem[0], elem[1]);
       }, this);
       // 自身を削除
-      this.tweener.wait(500).call(function() { piece.remove()});
+      this.tweener.wait(500)
+                  .call(
+                    function() {
+                      piece.remove()
+                  }, this);
     },
     
     _static: {
