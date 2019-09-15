@@ -67,9 +67,8 @@ phina.namespace(function() {
       }, this);
       // 自身を削除
       this.tweener.wait(500)
-                  .call(
-                    function() {
-                      piece.remove()
+                  .call(function() {
+                    this.remove()
                   }, this);
     },
     
