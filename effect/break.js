@@ -64,13 +64,17 @@ phina.namespace(function() {
         var piece = this.children[i];
         piece.physical.gravity.y = 4.6;
         piece.physical.velocity = phina.geom.Vector2().fromDegree(elem[0], elem[1]);
+        piece.tweener.wait(500)
+                    .call(function() {
+                      piece.remove()
+                    });
       }, this);
       // 自身を削除
-      var self = this;
-      this.tweener.wait(500)
-                  .call(function() {
-                    self.remove()
-                  });
+//      var self = this;
+  //    this.tweener.wait(500)
+    //              .call(function() {
+      //              self.remove()
+        //          });
     },
     
     _static: {
