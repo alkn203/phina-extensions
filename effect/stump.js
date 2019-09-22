@@ -4,8 +4,6 @@ phina.namespace(function() {
    * @class phina.effect.Stump
    */
   phina.define('phina.effect.Stump', {
-    superClass: 'phina.display.DisplayElement',
-    
     /**
      * @constructor
      */
@@ -22,9 +20,10 @@ phina.namespace(function() {
       // 縦方向に縮小
       target.tweener.to({scaleY: 0.1}, speed)
                     .call(function() {
-                      // イベント発火
-                      target.flare('stump');
-                    })
+                      // 削除
+                      target.remove();
+                      this.remove();
+                    }, this)
                     .play();
     },
     
