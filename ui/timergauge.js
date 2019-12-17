@@ -1,12 +1,15 @@
 phina.namespace(function() {
   /**
    * @class phina.ui.TimerGauge
+   * タイマーゲージクラス
    * @extends phina.ui.Gauge
    */
   phina.define('phina.ui.TimerGauge', {
     // Guageを継承
     superClass: 'phina.ui.Gauge',
-      // コンストラクタ
+      /**
+       * @constructor
+       */
       init: function(options) {
         options = ({}).$safe(options || {}, phina.ui.TimerGauge.defaults);
         // 制限時間をゲージに引き渡す
@@ -14,20 +17,32 @@ phina.namespace(function() {
         // 親クラス初期化
         this.superInit(options);
       },
-      // タイマー稼働
+      /**
+       * @method run
+       * タイマーを起動する
+       */
       run: function() {
         this.update = this.elapse;
       },
-      // タイマー停止
+      /**
+       * @method pause
+       * タイマーを停止する
+       */
       pause: function() {
         this.update = null;
       },
-      // ゲージ回復
+      /**
+       * @method recover
+       * タイマーゲージを回復する
+       */
       recover: function() {
         this.pause();
         this.value = this.maxValue;  
       },
-      // 時間経過でゲージを減らす
+      /**
+       * @method elapse
+       * タイマーゲージを減らす
+       */
       elapse: function(app) {
         this.value -= app.deltaTime;
       },
