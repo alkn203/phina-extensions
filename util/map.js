@@ -41,11 +41,17 @@ phina.namespace(function() {
       return false;
     },
     /**
-     * タイルが何か調べる
+     * タイルが何か調べる(座標から)
      */
     checkTile: function(x, y) {
       var i = (x / this.tileWidth) | 0;
       var j = (y / this.tileHeight) | 0;
+      return this.mapData[j][i];
+    },
+    /**
+     * タイルが何か調べる(インデックスから)
+     */
+    checkTileByIndex: function(i, j) {
       return this.mapData[j][i];
     },
     /**
