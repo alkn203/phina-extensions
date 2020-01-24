@@ -55,6 +55,12 @@ phina.namespace(function() {
       return this.mapData[j][i];
     },
     /**
+     * タイルを更新する
+     */
+    setTile: function(tile) {
+      this.mapData[j][i] = tile;
+    },
+    /**
      * @private
      */
     _createMap: function() {
