@@ -57,7 +57,7 @@ phina.namespace(function() {
     /**
      * タイルを更新する
      */
-    setTile: function(tile) {
+    setTile: function(i, j, tile) {
       this.mapData[j][i] = tile;
     },
     /**
