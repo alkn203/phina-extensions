@@ -61,6 +61,13 @@ phina.namespace(function() {
       this.mapData[j][i] = tile;
     },
     /**
+     * 子要素を得る（インデックスから）
+     */
+    getChildByIndex: function(i, j) {
+      var index = j * this.mapData.first.length + i;
+      return this.children[index]; 
+    },
+    /**
      * @private
      */
     _createMap: function() {
