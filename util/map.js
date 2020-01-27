@@ -16,12 +16,12 @@ phina.namespace(function() {
     mapData: null,
     // タイル衝突判定用の2次元配列
     collisionData: null,
-    
+
     init: function(options) {
       options = ({}).$safe(options || {}, Map.defaults);
       // 親クラス初期化
       this.superInit();
-      
+
       this.tileWidth = options.tileWidth;
       this.tileHeight = options.tileHeight;
       this.imageName = options.imageName;
@@ -36,7 +36,7 @@ phina.namespace(function() {
     hitTest: function(x, y) {
       var i = (x / this.tileWidth) | 0;
       var j = (y / this.tileHeight) | 0;
-            
+
       if (this.collisionData[j][i] === 1) return true;
       return false;
     },
@@ -65,27 +65,27 @@ phina.namespace(function() {
      */
     getChildByIndex: function(i, j) {
       var index = j * this.mapData.first.length + i;
-      return this.children[index]; 
+      return this.children[index];
     },
     /**
      * @private
      */
     _createMap: function() {
       var data = this.mapData;
-      
+
       for (var i = 0; i < data.length; i++) {
         for (var j = 0; j < data[i].length; j++) {
           var tw = this.tileWidth;
-          var th = this.tileHeight;        
+          var th = this.tileHeight;
           var tile = phina.display.Sprite(this.imageName, tw, th).addChildTo(this)
           // 原点は左上にしておく
           tile.setOrigin(0, 0).setPosition(j * th, i * tw);
-          // フレームインデックス
+          // フレームインデックス指定
           tile.frameIndex = data[i][j];
         }
       }
     },
-    
+
     _static: {
       defaults: {
         tileWidth: 64,
