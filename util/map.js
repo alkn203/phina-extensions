@@ -73,8 +73,8 @@ phina.namespace(function() {
     _createMap: function() {
       var data = this.mapData;
 
-      for (var i = 0; i < data.length; i++) {
-        for (var j = 0; j < data[i].length; j++) {
+      for (var i = 0; i < data.length; ++i) {
+        for (var j = 0; j < data[i].length; ++j) {
           var tw = this.tileWidth;
           var th = this.tileHeight;
           var tile = phina.display.Sprite(this.imageName, tw, th).addChildTo(this)
