@@ -27,6 +27,23 @@ phina.namespace(function() {
       this.imageName = options.imageName;
       this.mapData = options.mapData;
       this.collisionData = options.collisionData;
+      // 折り返し個数
+      this.maxPerLine = this.mapData.first.length;
+
+      var self = this;
+      // 内部管理用の1次元配列
+      this._mapData = [];
+      // 2次元から1次元にする
+      this.mapData.each(function(data) {
+        self._mapData = self._mapData.concat(data);
+      });
+
+      if (this.collisionData) {
+        this._collisionData = [];
+        this.collisionData.each(function(data) {
+          self._collisionData = self._collisionData.concat(data);
+        });
+      }
       // マップ作成
       this._createMap();
     },
@@ -52,38 +69,43 @@ phina.namespace(function() {
      * タイルが何か調べる(インデックスから)
      */
     checkTileByIndex: function(i, j) {
-      return this.mapData[j][i];
+      // 行のインデックス * 列数 + 列のインデックス
+      return this._mapData[j * this.maxPerLine + i];
     },
     /**
      * タイルを更新する
      */
     setTile: function(i, j, tile) {
-      this.mapData[j][i] = tile;
+      this._mapData[j * this.maxPerLine + i] = tile;
     },
     /**
      * 子要素を得る（インデックスから）
      */
     getChildByIndex: function(i, j) {
-      var index = j * this.mapData.first.length + i;
-      return this.children[index];
+      return this.children[j * this.maxPerLine + i];
     },
     /**
      * @private
+     * マップ作成
      */
     _createMap: function() {
-      var data = this.mapData;
+      var tw = this.tileWidth;
+      var th = this.tileHeight;
+      var maxPerLine = this.maxPerLine;
+      var self = this;
 
-      for (var i = 0; i < data.length; ++i) {
-        for (var j = 0; j < data[i].length; ++j) {
-          var tw = this.tileWidth;
-          var th = this.tileHeight;
-          var tile = phina.display.Sprite(this.imageName, tw, th).addChildTo(this)
-          // 原点は左上にしておく
-          tile.setOrigin(0, 0).setPosition(j * th, i * tw);
-          // フレームインデックス指定
-          tile.frameIndex = data[i][j];
-        }
-      }
+      this._mapData.each(function(elem, i) {
+        // グリッド配置用のインデックス値算出
+        var xIndex = i % maxPerLine;
+        var yIndex = Math.floor(i / maxPerLine);
+        var x = tw * xIndex + tw / 2;
+        var y = th * yIndex + th / 2;
+        //
+        var tile = phina.display.Sprite(self.imageName, tw, th).addChildTo(self);
+        tile.setPosition(x, y);
+        // フレームインデックス指定
+        tile.frameIndex = elem;
+      });
     },
 
     _static: {
