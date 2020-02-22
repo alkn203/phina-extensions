@@ -1,4 +1,3 @@
-
 phina.namespace(function() {
 
   /**
@@ -29,7 +28,7 @@ phina.namespace(function() {
       this.collisionData = options.collisionData;
       // 折り返し個数
       this.maxPerLine = this.mapData.first.length;
-
+      
       var self = this;
       // 内部管理用の1次元配列
       this._mapData = [];
@@ -37,7 +36,7 @@ phina.namespace(function() {
       this.mapData.each(function(data) {
         self._mapData = self._mapData.concat(data);
       });
-
+      
       if (this.collisionData) {
         this._collisionData = [];
         this.collisionData.each(function(data) {
@@ -63,7 +62,7 @@ phina.namespace(function() {
     checkTile: function(x, y) {
       var i = (x / this.tileWidth) | 0;
       var j = (y / this.tileHeight) | 0;
-      return this.mapData[j][i];
+      return this._mapData[j * this.maxPerLine + i];
     },
     /**
      * タイルが何か調べる(インデックスから)
@@ -93,7 +92,7 @@ phina.namespace(function() {
       var th = this.tileHeight;
       var maxPerLine = this.maxPerLine;
       var self = this;
-
+      
       this._mapData.each(function(elem, i) {
         // グリッド配置用のインデックス値算出
         var xIndex = i % maxPerLine;
