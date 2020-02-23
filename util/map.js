@@ -17,7 +17,7 @@ phina.namespace(function() {
     collisionData: null,
 
     init: function(options) {
-      options = ({}).$safe(options || {}, Map.defaults);
+      options = ({}).$safe(options || {}, phina.util.Map.defaults);
       // 親クラス初期化
       this.superInit();
 
@@ -47,13 +47,20 @@ phina.namespace(function() {
       this._createMap();
     },
     /**
-     * マップとの衝突判定を行う
+     * マップとの衝突判定を行う(座標から)
      */
     hitTest: function(x, y) {
       var i = (x / this.tileWidth) | 0;
       var j = (y / this.tileHeight) | 0;
 
-      if (this.collisionData[j][i] === 1) return true;
+      if (this._collisionData[j * this.maxPerLine + i] === 1) return true;
+      return false;
+    },
+   /**
+     * マップとの衝突判定を行う(インデックスから)
+     */
+    hitTestByIndex: function(i, j) {
+      if (this._collisionData[j * this.maxPerLine + i] === 1) return true;
       return false;
     },
     /**
@@ -76,6 +83,14 @@ phina.namespace(function() {
      */
     setTile: function(i, j, tile) {
       this._mapData[j * this.maxPerLine + i] = tile;
+    },
+    /**
+     * 子要素を得る（座標から）
+     */
+    getChild: function(x, y) {
+      var i = (x / this.tileWidth) | 0;
+      var j = (y / this.tileHeight) | 0;
+      return this.children[j * this.maxPerLine + i];
     },
     /**
      * 子要素を得る（インデックスから）
