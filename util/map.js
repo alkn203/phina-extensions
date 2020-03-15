@@ -79,9 +79,17 @@ phina.namespace(function() {
       return this._mapData[j * this.maxPerLine + i];
     },
     /**
-     * タイルを更新する
+     * タイルを更新する(座標から)
      */
-    setTile: function(i, j, tile) {
+    setTile: function(x, y, tile) {
+      var i = (x / this.tileWidth) | 0;
+      var j = (y / this.tileHeight) | 0;
+      this._mapData[j * this.maxPerLine + i] = tile;
+    },
+    /**
+     * タイルを更新する(インデックスから)
+     */
+    setTileByIndex: function(i, j, tile) {
       this._mapData[j * this.maxPerLine + i] = tile;
     },
     /**
