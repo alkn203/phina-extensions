@@ -20,7 +20,7 @@ phina.namespace(function() {
       // 表示するテキスト
       this.typedText = options.typedText;
       //
-      this.tweener.clear().to({index: this.typedText.length}, 1000);
+      this.tweener.clear().to({index: this.typedText.length}, options.duration);
     },
     // update
     update: function() {
