@@ -13,14 +13,21 @@ phina.namespace(function() {
       options = ({}).$safe(options || {}, phina.display.TypedLabel.defaults);
       // 親クラス初期化
       this.superInit(options);
-      //
+      // 初期値削除
       this.text = '';
-      // インデックス
+      // 何文字目まで表示するか
       this.index = 0;
       // 表示するテキスト
       this.typedText = options.typedText;
-      //
-      this.tweener.clear().to({index: this.typedText.length}, options.duration);
+      // タイプ終了
+      this.finished = false;
+      // 指定時間をかけてインデックスを増加
+      this.tweener.clear().to({index: this.typedText.length}, options.duration)
+                          .wait(100)
+                          .call(function() {
+                            // タイプ終了イベント発火
+                            this.flare('typeend');
+                          }, this);
     },
     // update
     update: function() {
