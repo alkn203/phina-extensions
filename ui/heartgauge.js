@@ -5,7 +5,7 @@ phina.namespace(function() {
    */
   phina.define("phina.ui.HeartGuage", {
     // 継承
-    superClass: 'DisplayElement',
+    superClass: 'phina.display.DisplayElement',
     // コンストラクタ
     init: function(options) {
       options = ({}).$safe(options || {}, phina.ui.HeartGuage.defaults);
