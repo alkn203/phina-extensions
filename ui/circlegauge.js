@@ -24,26 +24,31 @@ phina.namespace(function() {
       //
       this.startDeg = 0;
       this.endDeg = 360;
+      //
+      this.drawGuage();
     },
-    //
-    update: function() {
+    // ゲージを描画
+    drawGuage: function() {
       var canvas = this.canvas;
+      var r = this.radius;
+      // 開始位置を調整した角度
+      var sDeg = Math.degToRad(this.startDeg - 90);
+      var eDeg = Math.degToRad(this.endDeg - 90);
       // canvasクリア
       canvas.clear();
       canvas.globalCompositeOperation = 'source-over';
         
       canvas.context.fillStyle = this.backColor;
-      canvas.fillCircle(this.radius, this.radius, this.radius);
+      canvas.fillCircle(r, r, r);
       canvas.context.fillStyle = this.foreColor;
       // 部分円を描画
       canvas.beginPath();
-      canvas.moveTo(0, 0);
-      canvas.arc(this.radius, this.radius, this.radius, Math.degToRad(this.startDeg - 90), Math.degToRad(this.endDeg - 90), false);
+      canvas.moveTo(r, r).arc(r, r, r, sDeg, eDeg, false);
       canvas.closePath();
       canvas.fill();
       // 円で切り抜く
       canvas.globalCompositeOperation = 'xor';
-      canvas.fillCircle(this.radius, this.radius, this.radius * 0.5);
+      canvas.fillCircle(r, r, r * 0.5);
     },
     
     _static: {
