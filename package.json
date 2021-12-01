@@ -19,6 +19,7 @@
   "homepage": "https://github.com/alkn203/phina-extensions#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1"
+    "gulp-concat": "^2.6.1",
+    "gulp-jsdoc3": "^3.0.0"
   }
 }
