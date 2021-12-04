@@ -1,11 +1,13 @@
 phina.namespace(function() {
 
-  // マップチップ作成用クラス
+  /**
+   * @class マップ作成用クラス
+   */
   phina.define('phina.util.Map', {
     superClass: 'phina.display.DisplayElement',
     /**
      * コンストラクタ
-     * @constructor
+     * @param {Object} options コンストラクタ用のパラメータ連想配列
      */
     init: function(options) {
       options = ({}).$safe(options || {}, phina.util.Map.defaults);
