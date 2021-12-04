@@ -686,13 +686,11 @@ phina.namespace(function() {
 });
 phina.namespace(function() {
 
-  /**
-   * @class マップ作成用クラス
-   */
   phina.define('phina.util.Map', {
     superClass: 'phina.display.DisplayElement',
     /**
-     * コンストラクタ
+     * Mapクラスのコンストラクタ
+     * @class phina.util.Map
      * @param {Object} options コンストラクタ用のパラメータ連想配列
      */
     init: function(options) {
