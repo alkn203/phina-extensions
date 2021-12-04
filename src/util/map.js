@@ -1,21 +1,8 @@
 phina.namespace(function() {
 
-  /**
-   * @class phina.util.Map
-   * # マップチップ作成用クラス
-   */
+  // マップチップ作成用クラス
   phina.define('phina.util.Map', {
     superClass: 'phina.display.DisplayElement',
-    // タイルの幅
-    tileWidth: 64,
-    // タイルの高さ
-    tileHeight: 64,
-    // タイルセット画像の名前
-    imageName: '',
-    // マップデータの2次元配列
-    mapData: null,
-    // タイル衝突判定用の2次元配列
-    collisionData: null,
     /**
      * コンストラクタ
      * @constructor
@@ -25,11 +12,11 @@ phina.namespace(function() {
       // 親クラス初期化
       this.superInit();
 
-      this.tileWidth = options.tileWidth;
-      this.tileHeight = options.tileHeight;
-      this.imageName = options.imageName;
-      this.mapData = options.mapData;
-      this.collisionData = options.collisionData;
+      this.tileWidth = options.tileWidth || 64;
+      this.tileHeight = options.tileHeight || 64;
+      this.imageName = options.imageName || '';
+      this.mapData = options.mapData || null;
+      this.collisionData = options.collisionData || null;
       // 折り返し個数
       this.maxPerLine = this.mapData.first.length;
       
