@@ -685,14 +685,22 @@ phina.namespace(function() {
   });
 });
 phina.namespace(function() {
-
+  /**
+   * マップ用の2次元配列データからマップを作成します。
+   * @class phina.util.Map
+   * @memberOf phina.util
+   * @extends phina.display.DisplayElement
+   *
+   * @example
+   * phina.globalize();
+   *
+   *
+   *
+   * @param {object} [options] - phina.display.DisplayElementのoptionsと一緒
+   */
   phina.define('phina.util.Map', {
     superClass: 'phina.display.DisplayElement',
-    /**
-     * Mapクラスのコンストラクタ
-     * @class phina.util.Map
-     * @param {Object} options コンストラクタ用のパラメータ連想配列
-     */
+
     init: function(options) {
       options = ({}).$safe(options || {}, phina.util.Map.defaults);
       // 親クラス初期化
@@ -724,7 +732,13 @@ phina.namespace(function() {
       this._createMap();
     },
     /**
-     * マップとの衝突判定を行う(座標から)
+     * 座標からマップとの衝突判定を行う
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} x - x座標
+     * @param {number} y - y座標
+     * @return {boolean} 衝突したかどうか
      */
     hitTest: function(x, y) {
       var i = (x / this.tileWidth) | 0;
