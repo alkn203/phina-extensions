@@ -2,6 +2,7 @@ phina.namespace(function() {
 
   /**
    * @class phina.util.Map
+   * # マップチップ作成用クラス
    */
   phina.define('phina.util.Map', {
     superClass: 'phina.display.DisplayElement',
@@ -15,7 +16,10 @@ phina.namespace(function() {
     mapData: null,
     // タイル衝突判定用の2次元配列
     collisionData: null,
-
+    /**
+     * コンストラクタ
+     * @constructor
+     */
     init: function(options) {
       options = ({}).$safe(options || {}, phina.util.Map.defaults);
       // 親クラス初期化
