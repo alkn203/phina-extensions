@@ -747,15 +747,27 @@ phina.namespace(function() {
       if (this._collisionData[j * this.maxPerLine + i] === 1) return true;
       return false;
     },
-   /**
-     * マップとの衝突判定を行う(インデックスから)
+    /**
+     * 配列のインデックスからマップとの衝突判定を行う
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} i - 横方向のインデックス
+     * @param {number} j - 縦方向のインデックス
+     * @return {boolean} 衝突したかどうか
      */
     hitTestByIndex: function(i, j) {
       if (this._collisionData[j * this.maxPerLine + i] === 1) return true;
       return false;
     },
     /**
-     * タイルが何か調べる(座標から)
+     * 指定された座標のタイルが何か調べる
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} x - x座標
+     * @param {number} y - y座標
+     * @return {number} タイル番号
      */
     checkTile: function(x, y) {
       var i = (x / this.tileWidth) | 0;
@@ -763,14 +775,26 @@ phina.namespace(function() {
       return this._mapData[j * this.maxPerLine + i];
     },
     /**
-     * タイルが何か調べる(インデックスから)
+     * 指定されたインデックスのタイルが何か調べる
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} i - 横方向のインデックス
+     * @param {number} j - 縦方向のインデックス
+     * @return {number} タイル番号
      */
     checkTileByIndex: function(i, j) {
       // 行のインデックス * 列数 + 列のインデックス
       return this._mapData[j * this.maxPerLine + i];
     },
     /**
-     * タイルを更新する(座標から)
+     * 指定された座標のタイルを更新する
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} x - x座標
+     * @param {number} y - y座標
+     * @param {number} tile - タイル番号
      */
     setTile: function(x, y, tile) {
       var i = (x / this.tileWidth) | 0;
@@ -778,13 +802,25 @@ phina.namespace(function() {
       this._mapData[j * this.maxPerLine + i] = tile;
     },
     /**
-     * タイルを更新する(インデックスから)
+     * 指定されたインデックスのタイルを更新する
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} i - 横方向のインデックス
+     * @param {number} j - 縦方向のインデックス
+     * @param {number} tile - タイル番号
      */
     setTileByIndex: function(i, j, tile) {
       this._mapData[j * this.maxPerLine + i] = tile;
     },
     /**
-     * 子要素を得る（座標から）
+     * 指定された座標の子要素を得る
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} x - x座標
+     * @param {number} y - y座標
+     * @return {Object} 子要素
      */
     getChild: function(x, y) {
       var i = (x / this.tileWidth) | 0;
@@ -794,13 +830,19 @@ phina.namespace(function() {
     /**
      * 子要素を得る（インデックスから）
      */
+    /**
+     * 指定されたインデックスの子要素を得る
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} i - 横方向のインデックス
+     * @param {number} j - 縦方向のインデックス
+     * @return {Object} 子要素
+     */
     getChildByIndex: function(i, j) {
       return this.children[j * this.maxPerLine + i];
     },
-    /**
-     * @private
-     * マップ作成
-     */
+    // マップ作成
     _createMap: function() {
       var tw = this.tileWidth;
       var th = this.tileHeight;
