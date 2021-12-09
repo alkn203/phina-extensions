@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>util/map.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="phina.accessory.GridLayout.html">GridLayout</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="phina.accessory.RingLayout.html">RingLayout</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="phina.display.TypedLabel.html">TypedLabel</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="phina.effect.Break.html">Break</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="phina.effect.Stump.html">Stump</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="phina.util.Map.html">Map</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="phina.util.Map.html#checkTile">checkTile</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="phina.util.Map.html#checkTileByIndex">checkTileByIndex</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="phina.util.Map.html#getChild">getChild</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="phina.util.Map.html#getChildByIndex">getChildByIndex</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="phina.util.Map.html#hitTest">hitTest</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="phina.util.Map.html#hitTestByIndex">hitTestByIndex</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="phina.util.Map.html#setTile">setTile</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="phina.util.Map.html#setTileByIndex">setTileByIndex</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#elapse%25E3%2582%25BF%25E3%2582%25A4%25E3%2583%259E%25E3%2583%25BC%25E3%2582%25B2%25E3%2583%25BC%25E3%2582%25B8%25E3%2582%2592%25E6%25B8%259B%25E3%2582%2589%25E3%2581%2599">elapseタイマーゲージを減らす</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#pause%25E3%2582%25BF%25E3%2582%25A4%25E3%2583%259E%25E3%2583%25BC%25E3%2582%2592%25E5%2581%259C%25E6%25AD%25A2%25E3%2581%2599%25E3%2582%258B">pauseタイマーを停止する</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#recover%25E3%2582%25BF%25E3%2582%25A4%25E3%2583%259E%25E3%2583%25BC%25E3%2582%25B2%25E3%2583%25BC%25E3%2582%25B8%25E3%2582%2592%25E5%259B%259E%25E5%25BE%25A9%25E3%2581%2599%25E3%2582%258B">recoverタイマーゲージを回復する</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#run%25E3%2582%25BF%25E3%2582%25A4%25E3%2583%259E%25E3%2583%25BC%25E3%2582%2592%25E8%25B5%25B7%25E5%258B%2595%25E3%2581%2599%25E3%2582%258B">runタイマーを起動する</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">util/map.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>phina.namespace(function() {
+  /**
+   * マップ用の2次元配列データからマップを作成します。
+   * @class phina.util.Map
+   * @memberOf phina.util
+   * @extends phina.display.DisplayElement
+   *
+   * @example
+   * phina.globalize();
+   *
+   *
+   *
+   * @param {object} [options] - phina.display.DisplayElementのoptionsと一緒
+   */
+  phina.define('phina.util.Map', {
+    superClass: 'phina.display.DisplayElement',
+
+    init: function(options) {
+      options = ({}).$safe(options || {}, phina.util.Map.defaults);
+      // 親クラス初期化
+      this.superInit();
+
+      this.tileWidth = options.tileWidth || 64;
+      this.tileHeight = options.tileHeight || 64;
+      this.imageName = options.imageName || '';
+      this.mapData = options.mapData || null;
+      this.collisionData = options.collisionData || null;
+      // 折り返し個数
+      this.maxPerLine = this.mapData.first.length;
+      
+      var self = this;
+      // 内部管理用の1次元配列
+      this._mapData = [];
+      // 2次元から1次元にする
+      this.mapData.each(function(data) {
+        self._mapData = self._mapData.concat(data);
+      });
+      
+      if (this.collisionData) {
+        this._collisionData = [];
+        this.collisionData.each(function(data) {
+          self._collisionData = self._collisionData.concat(data);
+        });
+      }
+      // マップ作成
+      this._createMap();
+    },
+    /**
+     * 座標からマップとの衝突判定を行う
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} x - x座標
+     * @param {number} y - y座標
+     * @return {boolean} 衝突したかどうか
+     */
+    hitTest: function(x, y) {
+      var i = (x / this.tileWidth) | 0;
+      var j = (y / this.tileHeight) | 0;
+
+      if (this._collisionData[j * this.maxPerLine + i] === 1) return true;
+      return false;
+    },
+    /**
+     * 配列のインデックスからマップとの衝突判定を行う
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} i - 横方向のインデックス
+     * @param {number} j - 縦方向のインデックス
+     * @return {boolean} 衝突したかどうか
+     */
+    hitTestByIndex: function(i, j) {
+      if (this._collisionData[j * this.maxPerLine + i] === 1) return true;
+      return false;
+    },
+    /**
+     * 指定された座標のタイルが何か調べる
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} x - x座標
+     * @param {number} y - y座標
+     * @return {number} タイル番号
+     */
+    checkTile: function(x, y) {
+      var i = (x / this.tileWidth) | 0;
+      var j = (y / this.tileHeight) | 0;
+      return this._mapData[j * this.maxPerLine + i];
+    },
+    /**
+     * 指定されたインデックスのタイルが何か調べる
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} i - 横方向のインデックス
+     * @param {number} j - 縦方向のインデックス
+     * @return {number} タイル番号
+     */
+    checkTileByIndex: function(i, j) {
+      // 行のインデックス * 列数 + 列のインデックス
+      return this._mapData[j * this.maxPerLine + i];
+    },
+    /**
+     * 指定された座標のタイルを更新する
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} x - x座標
+     * @param {number} y - y座標
+     * @param {number} tile - タイル番号
+     */
+    setTile: function(x, y, tile) {
+      var i = (x / this.tileWidth) | 0;
+      var j = (y / this.tileHeight) | 0;
+      this._mapData[j * this.maxPerLine + i] = tile;
+    },
+    /**
+     * 指定されたインデックスのタイルを更新する
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} i - 横方向のインデックス
+     * @param {number} j - 縦方向のインデックス
+     * @param {number} tile - タイル番号
+     */
+    setTileByIndex: function(i, j, tile) {
+      this._mapData[j * this.maxPerLine + i] = tile;
+    },
+    /**
+     * 指定された座標の子要素を得る
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} x - x座標
+     * @param {number} y - y座標
+     * @return {Object} 子要素
+     */
+    getChild: function(x, y) {
+      var i = (x / this.tileWidth) | 0;
+      var j = (y / this.tileHeight) | 0;
+      return this.children[j * this.maxPerLine + i];
+    },
+    /**
+     * 子要素を得る（インデックスから）
+     */
+    /**
+     * 指定されたインデックスの子要素を得る
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {number} i - 横方向のインデックス
+     * @param {number} j - 縦方向のインデックス
+     * @return {Object} 子要素
+     */
+    getChildByIndex: function(i, j) {
+      return this.children[j * this.maxPerLine + i];
+    },
+    // マップ作成
+    _createMap: function() {
+      var tw = this.tileWidth;
+      var th = this.tileHeight;
+      var maxPerLine = this.maxPerLine;
+      var self = this;
+      
+      this._mapData.each(function(elem, i) {
+        // グリッド配置用のインデックス値算出
+        var xIndex = i % maxPerLine;
+        var yIndex = Math.floor(i / maxPerLine);
+        var x = tw * xIndex + tw / 2;
+        var y = th * yIndex + th / 2;
+        //
+        var tile = phina.display.Sprite(self.imageName, tw, th).addChildTo(self);
+        tile.setPosition(x, y);
+        // フレームインデックス指定
+        tile.frameIndex = elem;
+      });
+    },
+
+    _static: {
+      defaults: {
+        tileWidth: 64,
+        tileHeight: 64,
+      },
+    }
+  });
+});</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Fri Dec 10 2021 01:07:20 GMT+0900 (日本標準時) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
