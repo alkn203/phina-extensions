@@ -18,10 +18,8 @@
   },
   "homepage": "https://github.com/alkn203/phina-extensions#readme",
   "devDependencies": {
-    "glob-parent": "^5.1.2",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
-    "gulp-jsdoc3": "^3.0.0",
-    "sanitize-html": "^2.3.2"
+    "jsdoc": "^3.6.7"
   }
 }
