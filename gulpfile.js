@@ -24,5 +24,20 @@ const concatSrc = function (done) {
   // 終了宣言
   done();
 };
+// ビルドファイル最小化タスク
+const minifySrc = function (done) {
+  // ファイルを指定
+  gulp.src('./build/phina-extensions.js')
+      // 最小化
+      .pipe(uglify())
+      // ファイル名変更
+      .pipe(rename({
+        extname: '.min.js'
+      }))
+      // 出力先フォルダを指定
+      .pipe(gulp.dest('./build/'));
+  // 終了宣言
+  done();
+};
 // タスク実行
-exports.default = gulp.series(concatSrc);
+exports.default = gulp.series(concatSrc, minifySrc);
