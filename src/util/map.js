@@ -11,6 +11,11 @@ phina.namespace(function() {
    *
    *
    * @param {object} [options] - phina.display.DisplayElementのoptionsと一緒
+   * @param {number} [options.tileWidth=64] - タイルの幅。
+   * @param {number} [options.tileHeight=64] - タイルの高さ。
+   * @param {string} [options.imageName=''] - タイル用の画像
+   * @param {Array} [options.mapData=null] - マップデータ用の２次元配列
+   * @param {Array} [options.collisionData=null] - 衝突判定用の２次元配列
    */
   phina.define('phina.util.Map', {
     superClass: 'phina.display.DisplayElement',

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/alkn203/phina-extensions#readme",
   "devDependencies": {
+    "docdash": "^1.2.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.0.0",
