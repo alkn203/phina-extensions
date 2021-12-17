@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 const uglify = require("gulp-uglify");
 const rename = require("gulp-rename");
+const shell = require('gulp-shell');
 
 const target = ['src/accessory/aim.js',
                 'src/accessory/collider.js',
@@ -39,5 +40,10 @@ const minifySrc = function (done) {
   // 終了宣言
   done();
 };
+// JSdocを実行するタスク
+const doc = function (done) {
+  shell(['./node_modules/.bin/jsdoc build/phina-extensions.js -t node_modules/docdash']);
+  done();
+};
 // タスク実行
-exports.default = gulp.series(concatSrc, minifySrc);
+exports.default = gulp.series(concatSrc, minifySrc, doc);
