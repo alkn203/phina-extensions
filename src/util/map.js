@@ -6,11 +6,40 @@ phina.namespace(function() {
    * @extends phina.display.DisplayElement
    *
    * @example
+   * // グローバルに展開
    * phina.globalize();
+   * // アセット
+   * var ASSETS = {
+   *   // 画像
+   *   image: {
+   *     'tile': 'https://cdn.jsdelivr.net/gh/alkn203/tomapiko_run@master/assets/tile.png',
+   *   },
+   * var data = [
+   *   [2,2,2,2,2,2,2,2,2,2],
+   *   [2,1,1,1,1,1,1,1,1,2],
+   *   [2,2,2,2,2,2,2,1,1,2],
+   *   [2,1,1,1,1,1,2,1,1,2],
+   *   [2,1,1,1,1,1,2,1,1,2],
+   *   [2,1,1,2,1,1,2,1,1,2],
+   *   [2,1,1,2,1,1,1,1,1,2],
+   *   [2,1,1,2,1,1,1,1,1,2],
+   *   [2,1,1,2,1,1,1,1,1,2],
+   *   [2,1,1,2,1,1,1,2,2,2],
+   *   [2,1,1,1,1,1,1,1,1,2],
+   *   [2,1,1,1,1,2,1,1,1,2],
+   *   [2,1,2,2,2,2,2,1,1,2],
+   *   [2,1,1,1,1,1,1,1,1,2],
+   *   [2,2,2,2,2,2,2,2,2,2]
+   * ];
    *
+   * var map = phina.util.Map({
+   *    tileWidth: 64,
+   *    tileHeight: 64,
+   *    imageName: 'tile',
+   *    mapData: data,
+   * }).addChildTo(this);
    *
-   *
-   * @param {object} [options] - phina.display.DisplayElementのoptionsと一緒
+   * @param {object} [options] - phina.display.DisplayElementのoptionsと同じ
    * @param {number} [options.tileWidth=64] - タイルの幅。
    * @param {number} [options.tileHeight=64] - タイルの高さ。
    * @param {string} [options.imageName=''] - タイル用の画像

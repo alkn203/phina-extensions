@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
-const shell = require('gulp-shell');
 
 const target = ['src/accessory/aim.js',
                 'src/accessory/collider.js',
@@ -17,8 +16,6 @@ const target = ['src/accessory/aim.js',
 
 const buildDest = './build';
 const buildName = 'phina-extensions.js';
-const cmd = './node_modules/.bin/jsdoc build/phina-extensions.js -t node_modules/docdash';
-
 // ソースファイル結合タスク
 const concatSrc = function (done) {
   // 結合元のファイルを指定
@@ -45,10 +42,5 @@ const minifySrc = function (done) {
   // 終了宣言
   done();
 };
-// JSdocを実行するタスク
-const doc = function (done) {
-  shell([cmd]);
-  done();
-};
 // タスク実行
-exports.default = gulp.series(concatSrc, minifySrc, doc);
+exports.default = gulp.series(concatSrc, minifySrc);
