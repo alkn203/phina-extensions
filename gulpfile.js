@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
-const uglify = require("gulp-uglify");
-const rename = require("gulp-rename");
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
 const shell = require('gulp-shell');
 
 const target = ['src/accessory/aim.js',
@@ -14,21 +14,26 @@ const target = ['src/accessory/aim.js',
                 'src/ui/heartgauge.js',
                 'src/ui/timergauge.js',
                 'src/util/map.js'];
+
+const buildDest = './build';
+const buildName = 'phina-extensions.js';
+const cmd = './node_modules/.bin/jsdoc build/phina-extensions.js -t node_modules/docdash';
+
 // ソースファイル結合タスク
 const concatSrc = function (done) {
   // 結合元のファイルを指定
   gulp.src(target)
       // 結合後のファイル名を指定
-      .pipe(concat('phina-extensions.js'))
+      .pipe(concat(buildName))
       // 出力フォルダを指定
-      .pipe(gulp.dest('./build/'));
+      .pipe(gulp.dest(buildDest));
   // 終了宣言
   done();
 };
 // ビルドファイル最小化タスク
 const minifySrc = function (done) {
   // ファイルを指定
-  gulp.src('./build/phina-extensions.js')
+  gulp.src(buildDest + '/' + buildName)
       // 最小化
       .pipe(uglify())
       // ファイル名変更
@@ -36,13 +41,13 @@ const minifySrc = function (done) {
         extname: '.min.js'
       }))
       // 出力先フォルダを指定
-      .pipe(gulp.dest('./build/'));
+      .pipe(gulp.dest(buildDest));
   // 終了宣言
   done();
 };
 // JSdocを実行するタスク
 const doc = function (done) {
-  shell(['./node_modules/.bin/jsdoc build/phina-extensions.js -t node_modules/docdash']);
+  shell([cmd]);
   done();
 };
 // タスク実行
