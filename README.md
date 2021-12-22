@@ -1,5 +1,5 @@
 # phina-extensions
-phina.jsの自作拡張機能
+phina.jsの自作拡張クラス
 
 # LICENSE
 MIT
