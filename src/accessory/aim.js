@@ -1,6 +1,6 @@
 phina.namespace(function() {
   /**
-   * アタッチされたオブジェクトの方向を常に向かせる
+   * アタッチされたオブジェクトに指定されたターゲットの方向を常に向かせるアクセサリ
    * @class phina.accessory.Aim
    * @memberOf phina.accessory
    * @extends phina.accessory.Accessory
