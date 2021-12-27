@@ -1,6 +1,6 @@
 phina.namespace(function() {
   /**
-   * アタッチされたオブジェクトに指定されたターゲットの方向を常に向かせるアクセサリ
+   * アタッチされたオブジェクトにコライダーを設定するアクセサリ
    * @class phina.accessory.Collider
    * @memberOf phina.accessory
    * @extends phina.accessory.Accessory

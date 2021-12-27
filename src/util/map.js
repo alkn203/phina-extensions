@@ -54,11 +54,11 @@ phina.namespace(function() {
       // 親クラス初期化
       this.superInit();
 
-      this.tileWidth = options.tileWidth || 64;
-      this.tileHeight = options.tileHeight || 64;
-      this.imageName = options.imageName || '';
-      this.mapData = options.mapData || null;
-      this.collisionData = options.collisionData || null;
+      this.tileWidth = options.tileWidth;
+      this.tileHeight = options.tileHeight;
+      this.imageName = options.imageName;
+      this.mapData = options.mapData;
+      this.collisionData = options.collisionData;
       // 折り返し個数
       this.maxPerLine = this.mapData.first.length;
       
@@ -215,6 +215,9 @@ phina.namespace(function() {
       defaults: {
         tileWidth: 64,
         tileHeight: 64,
+        imageName: '',
+        mapData: null,
+        collisionData: null
       },
     }
   });

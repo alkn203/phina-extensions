@@ -57,7 +57,7 @@ phina.namespace(function() {
 });
 phina.namespace(function() {
   /**
-   * アタッチされたオブジェクトに指定されたターゲットの方向を常に向かせるアクセサリ
+   * アタッチされたオブジェクトにコライダーを設定するアクセサリ
    * @class phina.accessory.Collider
    * @memberOf phina.accessory
    * @extends phina.accessory.Accessory
@@ -174,28 +174,46 @@ phina.namespace(function() {
 });
 phina.namespace(function() {
   /**
+   * アタッチされたオブジェクトグループをグリッド状に並べるアクセサリ
    * @class phina.accessory.GridLayout
+   * @memberOf phina.accessory
+   * @extends phina.accessory.Accessory
+   *
+   * @example
+   *
+   * var aim = phina.accessory.Aim().attachTo(enemy);
+   * aim.aimTo(player);
+   *
+   * @param {object} [options.target=null] - アタッチ対象
+   * @param {number} [options.cellWidth=64] - グリッドの幅
+   * @param {number} [options.cellHeight=64] - グリッドの高さ
+   * @param {number} [options.offsetX=32] - x方向の間隔
+   * @param {number} [options.offsetY=32] - y方向の間隔
+   * @param {number} [options.maxPerLine=10] - x方向の折返し数
    */
   phina.define('phina.accessory.GridLayout', {
     superClass: 'phina.accessory.Accessory',
-    /**
-     * @constructor
-     */
-    init: function(target) {
-      this.superInit(target);
 
-      this.cellWidth = 64;
-      this.cellHeight = 64;
-      this.offsetX = 32;
-      this.offsetY = 32;
-      this.maxPerLine = 10;
+    init: function(target, options) {
+      options = ({}).$safe(options || {}, phina.accessory.GridLayout.defaults);
+      this.superInit(options.target);
+
+      this.cellWidth = options.cellWidth;
+      this.cellHeight = options.cellHeight;
+      this.offsetX = options.offsetX;
+      this.offsetY = options.offsetY;
+      this.maxPerLine = options.maxPerLine;
       this.arrangement = 'horizontal'; // vertical
     },
     
     onattached: function() {
       this.reposition();  
     },
-
+    /**
+     * オブジェクを並び替える
+     * @instance
+     * @memberof phina.accessory.GridLayout
+     */
     reposition: function() {
       var children = this.target.children;
   
@@ -209,6 +227,17 @@ phina.namespace(function() {
         }, this);
       }
     },
+    
+    _static: {
+      defaults: {
+        target: null,
+        cellWidth: 64,
+        cellHeight: 64,
+        offsetX: 32,
+        offsetY: 32,
+        maxPerLine: 10
+      },
+    }
   });
   
   phina.app.Element.prototype.getter('gridlayout', function() {
@@ -217,6 +246,7 @@ phina.namespace(function() {
     }
     return this._gridlayout;
   });
+
 });
 phina.namespace(function() {
   /**
@@ -751,11 +781,11 @@ phina.namespace(function() {
       // 親クラス初期化
       this.superInit();
 
-      this.tileWidth = options.tileWidth || 64;
-      this.tileHeight = options.tileHeight || 64;
-      this.imageName = options.imageName || '';
-      this.mapData = options.mapData || null;
-      this.collisionData = options.collisionData || null;
+      this.tileWidth = options.tileWidth;
+      this.tileHeight = options.tileHeight;
+      this.imageName = options.imageName;
+      this.mapData = options.mapData;
+      this.collisionData = options.collisionData;
       // 折り返し個数
       this.maxPerLine = this.mapData.first.length;
       
@@ -912,6 +942,9 @@ phina.namespace(function() {
       defaults: {
         tileWidth: 64,
         tileHeight: 64,
+        imageName: '',
+        mapData: null,
+        collisionData: null
       },
     }
   });
