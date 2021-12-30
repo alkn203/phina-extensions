@@ -1,20 +1,29 @@
 phina.namespace(function() {
-
   /**
+   * オブジェクト破壊のエフェクトを作成します。
    * @class phina.effect.Break
+   * @memberOf phina.effect
+   * @extends phina.display.DisplayElement
+   *
+   * @example
+   * // グローバルに展開
+   * phina.globalize();
+   *
+   * @param {object} [options] - phina.display.DisplayElementのoptionsと同じ
+   * @param {object} [options.sprite=null] - 対象のスプライト
+   * @param {string} [options.type='mariolike'] - 破壊エフェクトのタイプ
    */
   phina.define('phina.effect.Break', {
     superClass: 'phina.display.DisplayElement',
-    
-    /**
-     * @constructor
-     */
-    init: function(sprite, options) {
+
+    init: function(options) {
       options = ({}).$safe(options || {}, phina.effect.Break.defaults);
       // 親クラス初期化
-      this.superInit();
+      this.superInit(options);
       // タイプ
       var type = options.type;
+      // スプライト
+      var sprite = options.sprite;
       
       if (type === 'mariolike') {
         this._marioLike(sprite);
@@ -75,7 +84,8 @@ phina.namespace(function() {
     
     _static: {
       defaults: {
-        type: 'mariolike'
+        type: 'mariolike',
+        sprite: null
       },
     }
   });
