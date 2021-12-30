@@ -1,12 +1,18 @@
 phina.namespace(function() {
-
   /**
+   * オブジェクトを上から押しつぶすエフェクトを作成します。
    * @class phina.effect.Stump
+   * @memberOf phina.effect
+   *
+   * @example
+   * // グローバルに展開
+   * phina.globalize();
+   *
+   * @param {object} [options.target=null] - 対象のオブジェクト
+   * @param {number} [options.speed=200] - つぶれるまでの時間
    */
   phina.define('phina.effect.Stump', {
-    /**
-     * @constructor
-     */
+
     init: function(target, options) {
       options = ({}).$safe(options || {}, phina.effect.Stump.defaults);
       // 親クラス初期化
@@ -29,6 +35,7 @@ phina.namespace(function() {
     
     _static: {
       defaults: {
+        target: null,
         speed: 200
       },
     }
