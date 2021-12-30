@@ -477,6 +477,7 @@ phina.namespace(function() {
    * // グローバルに展開
    * phina.globalize();
    *
+   * @param {object} [options]
    * @param {object} [options.target=null] - 対象のオブジェクト
    * @param {number} [options.speed=200] - つぶれるまでの時間
    */
