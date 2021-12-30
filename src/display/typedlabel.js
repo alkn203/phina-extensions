@@ -1,14 +1,21 @@
 phina.namespace(function() {
-
   /**
+   * タイプされたように文字を表示するラベル
    * @class phina.display.TypedLabel
+   * @memberOf phina.display
+   * @extends phina.display.Label
+   *
+   * @example
+   * // グローバルに展開
+   * phina.globalize();
+   *
+   * @param {object} [options] - phina.display.Labelのoptionsと同じ
+   * @param {duration} [options.duration=1000] - 文字表示の時間間隔 ミリ秒
    */
   phina.define('phina.display.TypedLabel', {
     // Labelクラスを継承
     superClass: 'phina.display.Label',
-    /**
-     * @method init
-     */
+
     init: function(options) {
       options = ({}).$safe(options || {}, phina.display.TypedLabel.defaults);
       // 親クラス初期化
