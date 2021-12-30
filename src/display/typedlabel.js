@@ -10,7 +10,7 @@ phina.namespace(function() {
    * phina.globalize();
    *
    * @param {object} [options] - phina.display.Labelのoptionsと同じ
-   * @param {duration} [options.duration=1000] - 文字表示の時間間隔 ミリ秒
+   * @param {number} [options.duration=1000] - 文字表示の時間間隔 ミリ秒
    */
   phina.define('phina.display.TypedLabel', {
     // Labelクラスを継承
