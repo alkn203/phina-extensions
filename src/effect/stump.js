@@ -12,11 +12,9 @@ phina.namespace(function() {
    * @param {number} [options.speed=200] - つぶれるまでの時間
    */
   phina.define('phina.effect.Stump', {
-
-    init: function(target, options) {
+    
+    init: function(options) {
       options = ({}).$safe(options || {}, phina.effect.Stump.defaults);
-      // 親クラス初期化
-      this.superInit();
       // 潰れる速さ
       var speed = options.speed;
       // origin変更
