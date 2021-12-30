@@ -1,27 +1,46 @@
 phina.namespace(function() {
   /**
+   * アタッチされたオブジェクトグループを円状に並べるアクセサリ
    * @class phina.accessory.RingLayout
+   * @memberOf phina.accessory
+   * @extends phina.accessory.Accessory
+   *
+   * @example
+   *
+   * var aim = phina.accessory.Aim().attachTo(enemy);
+   * aim.aimTo(player);
+   *
+   * @param {object} [options.target=null] - アタッチ対象
+   * @param {number} [options.radius=160] - 円の半径
+   * @param {number} [options.offsetX=320] - x方向の位置
+   * @param {number} [options.offsetY=480] - y方向の位置
+   * @param {number} [options.ringRotation=0] - 回転
+   * @param {number} [options.ringScaleX=1] - x方向の縮尺
+   * @param {number} [options.ringScaleY=1] - y方向の縮尺
    */
   phina.define('phina.accessory.RingLayout', {
     superClass: 'phina.accessory.Accessory',
-    /**
-     * @constructor
-     */
-    init: function(target) {
-      this.superInit(target);
 
-      this.radius = 160;
-      this.offsetX = 320;
-      this.offsetY = 480;
-      this.ringRotation = 0;
-      this.ringScaleX = 1;
-      this.ringScaleY = 1;
+    init: function(target) {
+      options = ({}).$safe(options || {}, phina.accessory.RingLayout.defaults);
+      this.superInit(options.target);
+
+      this.radius = options.radius;
+      this.offsetX = options.offsetX;
+      this.offsetY = options.offsetY;
+      this.ringRotation = options.ringRotation;
+      this.ringScaleX = options.ringScaleX;
+      this.ringScaleY = options.ringScaleY;
     },
     
     onattached: function() {
       this.reposition();  
     }, 
-
+    /**
+     * オブジェクを並び替える
+     * @instance
+     * @memberof phina.accessory.RingLayout
+     */
     reposition: function() {
       var children = this.target.children;
       var deg = 360 / children.length;
@@ -33,6 +52,18 @@ phina.namespace(function() {
         child.setPosition(x, y);
       }, this);
     },
+
+    _static: {
+      defaults: {
+        target: null,
+        radius: 160,
+        offsetX: 320,
+        offsetY: 480,
+        ringRotation: 0,
+        ringScaleX: 1,
+        ringScaleY: 1
+      },
+    }
   });
 
   phina.app.Element.prototype.getter('ringlayout', function() {

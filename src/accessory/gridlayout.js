@@ -13,14 +13,14 @@ phina.namespace(function() {
    * @param {object} [options.target=null] - アタッチ対象
    * @param {number} [options.cellWidth=64] - グリッドの幅
    * @param {number} [options.cellHeight=64] - グリッドの高さ
-   * @param {number} [options.offsetX=32] - x方向の間隔
-   * @param {number} [options.offsetY=32] - y方向の間隔
+   * @param {number} [options.offsetX=32] - x方向の位置
+   * @param {number} [options.offsetY=32] - y方向の位置
    * @param {number} [options.maxPerLine=10] - x方向の折返し数
    */
   phina.define('phina.accessory.GridLayout', {
     superClass: 'phina.accessory.Accessory',
 
-    init: function(target, options) {
+    init: function(options) {
       options = ({}).$safe(options || {}, phina.accessory.GridLayout.defaults);
       this.superInit(options.target);
 
