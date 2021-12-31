@@ -469,7 +469,7 @@ phina.namespace(function() {
 });
 phina.namespace(function() {
   /**
-   * オブジェクトを上から押しつぶすエフェクトを作成します。
+   * オブジェクトを上から押しつぶすエフェクトを作成
    * @class phina.effect.Stump
    * @memberOf phina.effect
    *
@@ -511,9 +511,20 @@ phina.namespace(function() {
 });
 
 phina.namespace(function() {
-  /*
+  /**
+   * 円タイプのゲージ
    * @class phina.ui.CircleGuage
+   * @memberOf phina.ui
    * @extends phina.display.PlainElement
+   *
+   * @example
+   * // グローバルに展開
+   * phina.globalize();
+   *
+   * @param {object} [options] - phina.display.PlainElementのoptionsと同じ
+   * @param {number} [options.radius=32] - 円の半径
+   * @param {string} [options.foreColor='lime'] - ゲージの色
+   * @param {string} [options.backColor='red'] - ゲージの空部分の色
    */
   phina.define('phina.ui.CircleGuage', {
     // 継承

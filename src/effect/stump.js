@@ -1,6 +1,6 @@
 phina.namespace(function() {
   /**
-   * オブジェクトを上から押しつぶすエフェクトを作成します。
+   * オブジェクトを上から押しつぶすエフェクトを作成
    * @class phina.effect.Stump
    * @memberOf phina.effect
    *
