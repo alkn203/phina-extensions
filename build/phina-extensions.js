@@ -655,7 +655,14 @@ phina.namespace(function() {
       this.reposition(emptyGroup);
       this.reposition(heartGroup);
     },
-    // ハートを作成して返す
+    /**
+     * ハートを作成して返す
+     * @instance
+     * @memberof phina.ui.HeartGuage
+     *
+     * @param {string} type - ハートのタイプ empty or other
+     * @return {object} HeartShape型オプジェクト
+     */
     createHeart: function(type) {
       var color = (type === 'empty') ? this.emptyColor : this.heartColor;
 
@@ -666,6 +673,13 @@ phina.namespace(function() {
       });
       return heart;
     },
+    /**
+     * ハートを配置する
+     * @instance
+     * @memberof phina.ui.HeartGuage
+     *
+     * @param {object} group - ハートグループ
+     */
     // ハート配置
     reposition: function(group) {
       var col = this.col;
@@ -680,7 +694,13 @@ phina.namespace(function() {
         heart.setPosition(grid.span(xIndex), grid.span(yIndex));
       });
     },
-    // ダメージ
+    /**
+     * ダメージ処理
+     * @instance
+     * @memberof phina.ui.HeartGuage
+     *
+     * @param {number} value - ダメージ値
+     */
     damage: function(value) {
       // すでに空っぽなら何もしない
       if (this.isEmpty()) return;
@@ -714,7 +734,13 @@ phina.namespace(function() {
         if (self.isEmpty()) self.flare('empty');
       }
     },
-    // 回復
+    /**
+     * 回復処理
+     * @instance
+     * @memberof phina.ui.HeartGuage
+     *
+     * @param {number} value - 回復値
+     */
     recover: function(value) {
       // すでに満タンなら何もしない
       if (this.isFull()) return;
@@ -750,6 +776,11 @@ phina.namespace(function() {
       // 再配置
       this.reposition(group);
     },
+    /**
+     * ハートの最大個数を増やす
+     * @instance
+     * @memberof phina.ui.HeartGuage
+     */
     // ハート最大値を増やす
     gainHeart: function() {
       // 最大ハート数なら何もしない
@@ -763,12 +794,24 @@ phina.namespace(function() {
       this.reposition(this.emptyGroup);
       this.reposition(this.heartGroup);
     },
-    // 満タンかをチェック
+    /**
+     * 満タンかどうかを返す
+     * @instance
+     * @memberof phina.ui.HeartGuage
+     *
+     * @param {boolean} value - 満タンかどうか
+     */
     isFull: function() {
       var len = this.heartGroup.children.length;
       return len > 0 && len === this.emptyGroup.children.length;
     },
-    // 空っぽかをチェック
+    /**
+     * 空かどうかを返す
+     * @instance
+     * @memberof phina.ui.HeartGuage
+     *
+     * @param {boolean} value - 空かどうか
+     */
     isEmpty: function() {
       return this.heartGroup.children.length === 0;
     },
