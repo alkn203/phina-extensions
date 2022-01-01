@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>RingLayout - Documentation</title>
+    <title>TimerGauge - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">RingLayout</h1>
+    <h1 class="page-title">TimerGauge</h1>
     
 
     
@@ -42,7 +42,7 @@
 <header>
     
         <h2>
-        RingLayout
+        TimerGauge
         </h2>
         
     
@@ -56,14 +56,14 @@
 
     
 
-    <h4 class="name" id="RingLayout"><span class="type-signature"></span>new RingLayout<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="TimerGauge"><span class="type-signature"></span>new TimerGauge<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    アタッチされたオブジェクトグループを円状に並べるアクセサリ
+    タイマーゲージ
 </div>
 
 
@@ -99,7 +99,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line252">line 252</a>
+        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line834">line 834</a>
     </li></ul></dd>
     
 
@@ -135,8 +135,6 @@
         
 
         
-        <th>Default</th>
-        
 
         <th class="last">Description</th>
     </tr>
@@ -147,7 +145,7 @@
 
         <tr>
             
-                <td class="name"><code>options.target</code></td>
+                <td class="name"><code>options</code></td>
             
 
             <td class="type">
@@ -172,24 +170,39 @@
             
 
             
-                <td class="default">
-                
-                    null
-                
-                </td>
-            
 
             <td class="description last">
-                アタッチ対象
+                phina.ui.Gaugeのoptionsと同じ
                 
-            </td>
-        </tr>
+                    
 
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
             
-                <td class="name"><code>options.radius</code></td>
+                <td class="name"><code>limitTime</code></td>
             
 
             <td class="type">
@@ -216,223 +229,21 @@
             
                 <td class="default">
                 
-                    160
+                    60
                 
                 </td>
             
 
             <td class="description last">
-                円の半径
+                制限時間
                 
             </td>
         </tr>
 
     
+    </tbody>
+</table>
 
-        <tr>
-            
-                <td class="name"><code>options.offsetX</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    320
-                
-                </td>
-            
-
-            <td class="description last">
-                x方向の位置
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>options.offsetY</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    480
-                
-                </td>
-            
-
-            <td class="description last">
-                y方向の位置
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>options.ringRotation</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    0
-                
-                </td>
-            
-
-            <td class="description last">
-                回転
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>options.ringScaleX</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    1
-                
-                </td>
-            
-
-            <td class="description last">
-                x方向の縮尺
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>options.ringScaleY</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>number</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    1
-                
-                </td>
-            
-
-            <td class="description last">
-                y方向の縮尺
                 
             </td>
         </tr>
@@ -459,7 +270,7 @@
 <div class="section-examples">
 <h5>Example</h5>
 
-    <pre class="prettyprint"><code>var aim = phina.accessory.Aim().attachTo(enemy);aim.aimTo(player);</code></pre>
+    <pre class="prettyprint"><code>// グローバルに展開phina.globalize();</code></pre>
 
 </div>
 
@@ -474,7 +285,7 @@
 
 
     <ul>
-        <li>phina.accessory.Accessory</li>
+        <li>phina.ui.Gauge</li>
     </ul>
 
 
@@ -499,14 +310,14 @@
 
     
 
-    <h4 class="name" id="reposition"><span class="type-signature"></span>reposition<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="elapse"><span class="type-signature"></span>elapse<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    オブジェクを並び替える
+    タイマーゲージを減らす
 </div>
 
 
@@ -542,7 +353,256 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line294">line 294</a>
+        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line888">line 888</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="pause"><span class="type-signature"></span>pause<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    タイマーを停止する
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line871">line 871</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="recover"><span class="type-signature"></span>recover<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    タイマーゲージを回復する
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line879">line 879</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="run"><span class="type-signature"></span>run<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    タイマーを起動する
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line863">line 863</a>
     </li></ul></dd>
     
 
