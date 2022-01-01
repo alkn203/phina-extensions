@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Stump - Documentation</title>
+    <title>HeartGuage - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Stump</h1>
+    <h1 class="page-title">HeartGuage</h1>
     
 
     
@@ -42,7 +42,7 @@
 <header>
     
         <h2>
-        Stump
+        HeartGuage
         </h2>
         
     
@@ -56,14 +56,14 @@
 
     
 
-    <h4 class="name" id="Stump"><span class="type-signature"></span>new Stump<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="HeartGuage"><span class="type-signature"></span>new HeartGuage<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    オブジェクトを上から押しつぶすエフェクトを作成
+    ハートタイプのゲージ
 </div>
 
 
@@ -99,7 +99,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line471">line 471</a>
+        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line586">line 586</a>
     </li></ul></dd>
     
 
@@ -172,7 +172,7 @@
             
 
             <td class="description last">
-                
+                phina.display.DisplayElementのoptionsと同じ
                 
                     
 
@@ -202,49 +202,7 @@
 
         <tr>
             
-                <td class="name"><code>target</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code>object</code></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    null
-                
-                </td>
-            
-
-            <td class="description last">
-                対象のオブジェクト
-                
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>speed</code></td>
+                <td class="name"><code>gridSize</code></td>
             
 
             <td class="type">
@@ -271,13 +229,349 @@
             
                 <td class="default">
                 
-                    200
+                    64
                 
                 </td>
             
 
             <td class="description last">
-                つぶれるまでの時間
+                グリッドサイズ
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>number</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">
+                オフセット
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>heartColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    'red'
+                
+                </td>
+            
+
+            <td class="description last">
+                ハートの色
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>emptyColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    'gray'
+                
+                </td>
+            
+
+            <td class="description last">
+                空ハートの色
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>backColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    'red'
+                
+                </td>
+            
+
+            <td class="description last">
+                ゲージの空部分の色
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>defaultMax</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>number</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    3
+                
+                </td>
+            
+
+            <td class="description last">
+                デフォルトのハートの個数
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>number</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    20
+                
+                </td>
+            
+
+            <td class="description last">
+                ハートの最大個数
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>colmun</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>number</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    10
+                
+                </td>
+            
+
+            <td class="description last">
+                ハートの折返し
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>animation</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>boolean</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">
+                ハートが減る時アニメーションするかどうか
                 
             </td>
         </tr>
@@ -319,6 +613,17 @@
 </div>
     
     </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li>phina.display.PlainElement</li>
+    </ul>
+
 
     
 

@@ -1,8 +1,25 @@
 phina.namespace(function() {
-  /*
+  /**
+   * ハートタイプのゲージ
    * @class phina.ui.HeartGuage
-   * @extends phina.display.DisplayElement
-   */
+   * @memberOf phina.ui
+   * @extends phina.display.PlainElement
+   *
+   * @example
+   * // グローバルに展開
+   * phina.globalize();
+   *
+   * @param {object} [options] - phina.display.DisplayElementのoptionsと同じ
+   * @param {number} [options.gridSize=64] - グリッドサイズ
+   * @param {number} [options.offset=0] - オフセット
+   * @param {string} [options.heartColor='red'] - ハートの色
+   * @param {string} [options.emptyColor='gray'] - 空ハートの色
+   * @param {string} [options.backColor='red'] - ゲージの空部分の色
+   * @param {number} [options.defaultMax=3] - デフォルトのハートの個数
+   * @param {number} [options.maxValue=20] - ハートの最大個数
+   * @param {number} [options.colmun=10] - ハートの折返し
+   * @param {boolean} [options.animation=true] - ハートが減る時アニメーションするかどうか
+  */
   phina.define("phina.ui.HeartGuage", {
     // 継承
     superClass: 'phina.display.DisplayElement',
