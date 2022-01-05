@@ -9,6 +9,8 @@ phina.namespace(function() {
    *
    * var aim = phina.accessory.Aim().attachTo(enemy);
    * aim.aimTo(player);
+   * 
+   * Enemy().aim.aimTo(player);
    *
    * @param {object} [target] - アタッチ対象
    */
