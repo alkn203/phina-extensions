@@ -18,11 +18,13 @@ Self-made extension classes for phina.js
 
 ### phina.accessory.Collider
 
-![aim-sample](https://alkn203.github.io/phina-extensions/images/collider-sample.png)
+![collider-sample](https://alkn203.github.io/phina-extensions/images/collider-sample.png)
 
 [https://runstant.com/alkn203/projects/693b818b](https://runstant.com/alkn203/projects/693b818b)
 
 ### phina.accessory.GridLayout
+
+![gl-sample](https://alkn203.github.io/phina-extensions/images/gl-sample.png)
 
 ### phina.accessory.RingLayout
 
