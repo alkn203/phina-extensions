@@ -273,7 +273,7 @@ phina.namespace(function() {
   phina.define('phina.accessory.RingLayout', {
     superClass: 'phina.accessory.Accessory',
 
-    init: function(target) {
+    init: function(options) {
       options = ({}).$safe(options || {}, phina.accessory.RingLayout.defaults);
       this.superInit(options.target);
 
