@@ -11,14 +11,14 @@ Self-made extension classes for phina.js
 # Example Projects
 ### phina.accessory.Aim
 
-![aim-sample](/images/aim-sample.png)
+![aim-sample](/doc/images/aim-sample.png)
 
 
 [https://runstant.com/alkn203/projects/01dec06b](https://runstant.com/alkn203/projects/01dec06b)
 
 ### phina.accessory.Collider
 
-![aim-sample](/images/collider-sample.png)
+![aim-sample](/doc//images/collider-sample.png)
 
 [https://runstant.com/alkn203/projects/693b818b](https://runstant.com/alkn203/projects/693b818b)
 
