@@ -30,6 +30,10 @@ Self-made extension classes for phina.js
 
 ### phina.accessory.RingLayout
 
+![rl-sample](https://alkn203.github.io/phina-extensions/images/rl-sample.png)
+
+[http://runstant.com/alkn203/projects/c74b9dc7](http://runstant.com/alkn203/projects/c74b9dc7)
+
 ### phina.display.TypedLabel
 
 ### phina.effect.Break
