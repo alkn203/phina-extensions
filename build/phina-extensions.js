@@ -337,6 +337,7 @@ phina.namespace(function() {
    * phina.globalize();
    *
    * @param {object} [options] - phina.display.Labelのoptionsと同じ
+   * @param {string} [options.typedText=Hello] - 表示する文字
    * @param {number} [options.duration=1000] - 文字表示の時間間隔 ミリ秒
    */
   phina.define('phina.display.TypedLabel', {
@@ -372,6 +373,7 @@ phina.namespace(function() {
     
     _static: {
       defaults: {
+        typedText: 'Hello',
         duration: 1000
       },
     }
