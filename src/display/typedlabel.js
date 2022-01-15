@@ -6,8 +6,11 @@ phina.namespace(function() {
    * @extends phina.display.Label
    *
    * @example
-   * // グローバルに展開
-   * phina.globalize();
+   * 
+   * phina.display.TypedLabel({
+   *   fill: 'lime',
+   *   typedText:'Hello phina.js',
+   * }).addChildTo(this).setPosition(this.gridX.center(), this.gridY.center());
    *
    * @param {object} [options] - phina.display.Labelのoptionsと同じ
    * @param {string} [options.typedText=Hello] - 表示する文字

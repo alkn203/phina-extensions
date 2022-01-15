@@ -7,8 +7,13 @@ phina.namespace(function() {
    *
    * @example
    *
-   * var aim = phina.accessory.Aim().attachTo(enemy);
-   * aim.aimTo(player);
+   * var circleGroup = DisplayElement().addChildTo(this);
+   *
+   * (64).times(function(i) {
+   *   CircleShape().addChildTo(circleGroup);
+   * });
+   * // グループにGridLayoutをアタッチ
+   * var gl = phina.accessory.GridLayout().attachTo(circleGroup);
    *
    * @param {object} [options.target=null] - アタッチ対象
    * @param {number} [options.cellWidth=64] - グリッドの幅

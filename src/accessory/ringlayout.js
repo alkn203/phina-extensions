@@ -7,8 +7,13 @@ phina.namespace(function() {
    *
    * @example
    *
-   * var aim = phina.accessory.Aim().attachTo(enemy);
-   * aim.aimTo(player);
+   * var rectGroup = DisplayElement().addChildTo(this);
+   *
+   * (8).times(function(i) {
+   *   RectangleShape().addChildTo(rectGroup);
+   * });
+   * // グループにRingLayoutをアタッチ
+   * var rl = phina.accessory.RingLayout().attachTo(rectGroup);
    *
    * @param {object} [options.target=null] - アタッチ対象
    * @param {number} [options.radius=160] - 円の半径

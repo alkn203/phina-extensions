@@ -183,8 +183,13 @@ phina.namespace(function() {
    *
    * @example
    *
-   * var aim = phina.accessory.Aim().attachTo(enemy);
-   * aim.aimTo(player);
+   * var circleGroup = DisplayElement().addChildTo(this);
+   *
+   * (64).times(function(i) {
+   *   CircleShape().addChildTo(circleGroup);
+   * });
+   * // グループにGridLayoutをアタッチ
+   * var gl = phina.accessory.GridLayout().attachTo(circleGroup);
    *
    * @param {object} [options.target=null] - アタッチ対象
    * @param {number} [options.cellWidth=64] - グリッドの幅
@@ -259,8 +264,13 @@ phina.namespace(function() {
    *
    * @example
    *
-   * var aim = phina.accessory.Aim().attachTo(enemy);
-   * aim.aimTo(player);
+   * var rectGroup = DisplayElement().addChildTo(this);
+   *
+   * (8).times(function(i) {
+   *   RectangleShape().addChildTo(rectGroup);
+   * });
+   * // グループにRingLayoutをアタッチ
+   * var rl = phina.accessory.RingLayout().attachTo(rectGroup);
    *
    * @param {object} [options.target=null] - アタッチ対象
    * @param {number} [options.radius=160] - 円の半径
@@ -333,8 +343,11 @@ phina.namespace(function() {
    * @extends phina.display.Label
    *
    * @example
-   * // グローバルに展開
-   * phina.globalize();
+   * 
+   * phina.display.TypedLabel({
+   *   fill: 'lime',
+   *   typedText:'Hello phina.js',
+   * }).addChildTo(this).setPosition(this.gridX.center(), this.gridY.center());
    *
    * @param {object} [options] - phina.display.Labelのoptionsと同じ
    * @param {string} [options.typedText=Hello] - 表示する文字
