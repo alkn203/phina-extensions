@@ -372,7 +372,6 @@ phina.namespace(function() {
     
     _static: {
       defaults: {
-        typedText: 'Hello, phina.js'
         duration: 1000
       },
     }
