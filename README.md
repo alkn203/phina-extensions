@@ -36,6 +36,10 @@ Self-made extension classes for phina.js
 
 ### phina.display.TypedLabel
 
+![tl-sample](https://alkn203.github.io/phina-extensions/images/tl-sample.png)
+
+[https://runstant.com/alkn203/projects/2dc44ea9](https://runstant.com/alkn203/projects/2dc44ea9)
+
 ### phina.effect.Break
 
 ### phina.effect.Stump
