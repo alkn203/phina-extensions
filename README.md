@@ -42,6 +42,10 @@ Self-made extension classes for phina.js
 
 ### phina.effect.Break
 
+![break-sample](https://alkn203.github.io/phina-extensions/images/break-sample.png)
+
+[https://runstant.com/alkn203/projects/d2add699](https://runstant.com/alkn203/projects/d2add699)
+
 ### phina.effect.Stump
 
 ### phina.ui.CircleGauge
