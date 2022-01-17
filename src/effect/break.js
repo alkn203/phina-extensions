@@ -6,8 +6,10 @@ phina.namespace(function() {
    * @extends phina.display.DisplayElement
    *
    * @example
-   * // グローバルに展開
-   * phina.globalize();
+   * var sprite = Sprite('tiles', GRID_SIZE, GRID_SIZE).addChildTo(this);
+   * phina.effect.Break({
+   *   sprite: sprite,
+   * }).addChildTo(this);
    *
    * @param {object} [options] - phina.display.DisplayElementのoptionsと同じ
    * @param {object} [options.sprite=null] - 対象のスプライト
