@@ -507,6 +507,8 @@ phina.namespace(function() {
       options = ({}).$safe(options || {}, phina.effect.Stump.defaults);
       // 潰れる速さ
       var speed = options.speed;
+      // ターゲット
+      var target = options.target;
       // origin変更
       target.setOrigin(0.5, 1.0);
       // 位置調整
