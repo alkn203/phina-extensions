@@ -401,6 +401,7 @@ phina.namespace(function() {
    *
    * @example
    * var sprite = Sprite('tiles', GRID_SIZE, GRID_SIZE).addChildTo(this);
+   *
    * phina.effect.Break({
    *   sprite: sprite,
    * }).addChildTo(this);
