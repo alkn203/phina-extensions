@@ -13,6 +13,7 @@ phina.namespace(function() {
    * @param {number} [options.speed=200] - つぶれるまでの時間
    */
   phina.define('phina.effect.Stump', {
+    superClass: 'phina.display.DisplayElement',
     
     init: function(options) {
       options = ({}).$safe(options || {}, phina.effect.Stump.defaults);
