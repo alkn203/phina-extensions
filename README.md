@@ -48,6 +48,10 @@ Self-made extension classes for phina.js
 
 ### phina.effect.Stump
 
+![stump-sample](https://alkn203.github.io/phina-extensions/images/stump-sample.png)
+
+[https://runstant.com/alkn203/projects/d2add699](https://runstant.com/alkn203/projects/d2add699)
+
 ### phina.ui.CircleGauge
 
 ### phina.ui.HeartGuage
