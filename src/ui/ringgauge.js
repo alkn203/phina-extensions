@@ -1,8 +1,8 @@
 
 phina.namespace(function() {
   /**
-   * 円タイプのゲージ
-   * @class phina.ui.CircleGuage
+   * ドーナツ円タイプのゲージ
+   * @class phina.ui.RingGauge
    * @memberOf phina.ui
    * @extends phina.display.PlainElement
    *
@@ -14,13 +14,14 @@ phina.namespace(function() {
    * @param {number} [options.radius=32] - 円の半径
    * @param {string} [options.foreColor='lime'] - ゲージの色
    * @param {string} [options.backColor='red'] - ゲージの空部分の色
+   * @param {number} [options.maxValue=100] - ゲージの最大値
    */
-  phina.define('phina.ui.CircleGuage', {
+  phina.define('phina.ui.RingGauge', {
     // 継承
     superClass: 'phina.display.PlainElement',
     // コンストラクタ
     init: function(options) {
-      options = ({}).$safe(options || {}, phina.ui.CircleGuage.defaults);
+      options = ({}).$safe(options || {}, phina.ui.RingGauge.defaults);
       // 円サイズ（外周）
       this.radius = options.radius;
       // 親クラス初期化
@@ -32,19 +33,25 @@ phina.namespace(function() {
       this.foreColor = options.foreColor;
       // 空部分の色
       this.backColor = options.backColor;
+      // 最大値
+      this.maxValue = options.maxValue;
+      // 現在の値
+      this.value = this.maxValue;
       //
-      this.startDeg = 0;
-      this.endDeg = 360;
+      this.startDeg = 360;
+      this.endDeg = 0;
       //
-      this.drawGuage();
+      this.drawGauge();
     },
     // ゲージを描画
-    drawGuage: function() {
+    drawGauge: function() {
       var canvas = this.canvas;
       var r = this.radius;
+      //
+      var ratio = (this.maxValue - this.value) / this.maxValue;
       // 開始位置を調整した角度
       var sDeg = Math.degToRad(this.startDeg - 90);
-      var eDeg = Math.degToRad(this.endDeg - 90);
+      var eDeg = Math.degToRad(ratio * 360 - 90);
       // canvasクリア
       canvas.clear();
       canvas.globalCompositeOperation = 'source-over';
@@ -54,7 +61,7 @@ phina.namespace(function() {
       canvas.context.fillStyle = this.foreColor;
       // 部分円を描画
       canvas.beginPath();
-      canvas.moveTo(r, r).arc(r, r, r, sDeg, eDeg, false);
+      canvas.moveTo(r, r).arc(r, r, r, sDeg, eDeg, true);
       canvas.closePath();
       canvas.fill();
       // 円で切り抜く
@@ -67,6 +74,7 @@ phina.namespace(function() {
         radius: 32,
         foreColor: 'lime',
         backColor: 'red',
+        maxValue: 100,
       }
     }
   });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Break - Documentation</title>
+    <title>RingGauge - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Break</h1>
+    <h1 class="page-title">RingGauge</h1>
     
 
     
@@ -42,7 +42,7 @@
 <header>
     
         <h2>
-        Break
+        RingGauge
         </h2>
         
     
@@ -56,14 +56,14 @@
 
     
 
-    <h4 class="name" id="Break"><span class="type-signature"></span>new Break<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="RingGauge"><span class="type-signature"></span>new RingGauge<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    オブジェクト破壊のエフェクトを作成します。
+    ドーナツ円タイプのゲージ
 </div>
 
 
@@ -99,7 +99,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line396">line 396</a>
+        <a href="phina-extensions.js.html">phina-extensions.js</a>, <a href="phina-extensions.js.html#line537">line 537</a>
     </li></ul></dd>
     
 
@@ -172,7 +172,7 @@
             
 
             <td class="description last">
-                phina.display.DisplayElementのoptionsと同じ
+                phina.display.PlainElementのoptionsと同じ
                 
                     
 
@@ -202,13 +202,13 @@
 
         <tr>
             
-                <td class="name"><code>sprite</code></td>
+                <td class="name"><code>radius</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><code>object</code></span>
+<span class="param-type"><code>number</code></span>
 
 
             
@@ -229,13 +229,13 @@
             
                 <td class="default">
                 
-                    null
+                    32
                 
                 </td>
             
 
             <td class="description last">
-                対象のスプライト
+                円の半径
                 
             </td>
         </tr>
@@ -244,7 +244,7 @@
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>foreColor</code></td>
             
 
             <td class="type">
@@ -271,13 +271,97 @@
             
                 <td class="default">
                 
-                    'mariolike'
+                    'lime'
                 
                 </td>
             
 
             <td class="description last">
-                破壊エフェクトのタイプ
+                ゲージの色
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>backColor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    'red'
+                
+                </td>
+            
+
+            <td class="description last">
+                ゲージの空部分の色
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>number</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    100
+                
+                </td>
+            
+
+            <td class="description last">
+                ゲージの最大値
                 
             </td>
         </tr>
@@ -312,7 +396,7 @@
 <div class="section-examples">
 <h5>Example</h5>
 
-    <pre class="prettyprint"><code>var sprite = Sprite('tiles', GRID_SIZE, GRID_SIZE).addChildTo(this);phina.effect.Break({  sprite: sprite,}).addChildTo(this);</code></pre>
+    <pre class="prettyprint"><code>// グローバルに展開phina.globalize();</code></pre>
 
 </div>
 
@@ -327,7 +411,7 @@
 
 
     <ul>
-        <li>phina.display.DisplayElement</li>
+        <li>phina.display.PlainElement</li>
     </ul>
 
 

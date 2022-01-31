@@ -10,7 +10,7 @@ const target = ['src/accessory/aim.js',
                 'src/display/typedlabel.js', 
                 'src/effect/break.js',
                 'src/effect/stump.js',
-                'src/ui/circlegauge.js',
+                'src/ui/ringgauge.js',
                 'src/ui/heartgauge.js',
                 'src/ui/timergauge.js',
                 'src/util/map.js'];
