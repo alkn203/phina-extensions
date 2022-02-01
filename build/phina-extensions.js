@@ -597,6 +597,23 @@ phina.namespace(function() {
     isEmpty: function() {
       return this.value === 0;
     },
+    /**
+     * 値をセットする
+     * @instance
+     * @memberof phina.ui.RingGauge
+     *
+   　* @param {number} value - 設定する値
+     */
+    setValue: function(value) {
+      //
+      value = Math.clamp(value, 0, this.maxValue);
+      //
+      if (this.value === value) return ;
+      // 変更イベント発火
+      this.flare('change');
+
+      this.value = value;
+    },
     // ゲージを描画
     drawGauge: function() {
       var canvas = this.canvas;
