@@ -43,6 +43,26 @@ phina.namespace(function() {
       //
       this.drawGauge();
     },
+    /**
+     * ゲージが満タンかをチェックする
+     * @instance
+     * @memberof phina.ui.RingGauge
+     *
+     * @return {boolean} 満タンかどうか
+     */
+    isFull: function() {
+      return this.value === this.maxValue;
+    },
+    /**
+     * ゲージが空っぽかをチェックする
+     * @instance
+     * @memberof phina.ui.RingGauge
+     *
+     * @return {boolean} 空っぽかどうか
+     */
+    isEmpty: function() {
+      return this.value === 0;
+    },
     // ゲージを描画
     drawGauge: function() {
       var canvas = this.canvas;
