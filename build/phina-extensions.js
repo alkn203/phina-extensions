@@ -575,7 +575,7 @@ phina.namespace(function() {
       this.startDeg = 360;
       this.endDeg = 0;
       //
-      this.drawGauge();
+      this.redraw();
     },
     /**
      * ゲージが満タンかをチェックする
@@ -609,17 +609,16 @@ phina.namespace(function() {
       value = Math.clamp(value, 0, this.maxValue);
       //
       if (this.value === value) return ;
+      this.value = value;
       // 変更イベント発火
       this.flare('change');
-
-      this.value = value;
     },
     /**
      * ゲージを描画する
      * @instance
      * @memberof phina.ui.RingGauge
      */
-    drawGauge: function() {
+    redraw: function() {
       var canvas = this.canvas;
       var r = this.radius;
       //
@@ -654,6 +653,7 @@ phina.namespace(function() {
     }
   });
 });
+
 phina.namespace(function() {
   /**
    * ハートタイプのゲージ
