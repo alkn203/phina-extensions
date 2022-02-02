@@ -614,7 +614,11 @@ phina.namespace(function() {
 
       this.value = value;
     },
-    // ゲージを描画
+    /**
+     * ゲージを描画する
+     * @instance
+     * @memberof phina.ui.RingGauge
+     */
     drawGauge: function() {
       var canvas = this.canvas;
       var r = this.radius;
