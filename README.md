@@ -1,6 +1,9 @@
 # phina-extensions
 Self-made extension classes for phina.js
 
+# Documents
+[https://alkn203.github.io/phina-extensions/doc/](https://alkn203.github.io/phina-extensions/doc/)
+
 # Usage via CDN
 
 ```html
@@ -59,9 +62,6 @@ Self-made extension classes for phina.js
 ### phina.ui.TimerGauge
 
 ### phina.util.Map
-
-# Documents
-[https://alkn203.github.io/phina-extensions/doc/](https://alkn203.github.io/phina-extensions/doc/)
 
 # LICENSE
 MIT
