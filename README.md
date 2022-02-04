@@ -55,7 +55,11 @@ Self-made extension classes for phina.js
 
 [https://runstant.com/alkn203/projects/d2add699](https://runstant.com/alkn203/projects/d2add699)
 
-### phina.ui.CircleGauge
+### phina.ui.RingGauge
+
+![rg-sample](https://alkn203.github.io/phina-extensions/images/rg-sample.png)
+
+[https://runstant.com/alkn203/projects/2dc44ea9](https://runstant.com/alkn203/projects/a47a19f0)
 
 ### phina.ui.HeartGuage
 
