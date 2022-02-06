@@ -7,8 +7,16 @@ phina.namespace(function() {
    * @extends phina.display.PlainElement
    *
    * @example
-   * // グローバルに展開
-   * phina.globalize();
+   * var gauge = phina.ui.RingGauge({
+   *   radius: 64,
+   * }).addChildTo(this);
+   * gauge.setPosition(this.gridX.center(), this.gridY.center());
+   *
+   * gauge.on('change', function() {
+   *   gauge.redraw();
+   * });
+   *    
+   * gauge.setValue(90);
    *
    * @param {object} [options] - phina.display.PlainElementのoptionsと同じ
    * @param {number} [options.radius=32] - 円の半径
