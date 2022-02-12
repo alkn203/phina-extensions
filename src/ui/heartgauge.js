@@ -1,14 +1,12 @@
 phina.namespace(function() {
   /**
    * ハートタイプのゲージ
-   * @class phina.ui.HeartGuage
+   * @class phina.ui.HeartGauge
    * @memberOf phina.ui
    * @extends phina.display.PlainElement
    *
    * @example
-   * // グローバルに展開
-   * phina.globalize();
-   *
+   * var gauge = phina.ui.HeartGuage({offset: 100}).addChildTo(this);
    * @param {object} [options] - phina.display.DisplayElementのoptionsと同じ
    * @param {number} [options.gridSize=64] - グリッドサイズ
    * @param {number} [options.offset=0] - オフセット
@@ -20,12 +18,12 @@ phina.namespace(function() {
    * @param {number} [options.colmun=10] - ハートの折返し
    * @param {boolean} [options.animation=true] - ハートが減る時アニメーションするかどうか
   */
-  phina.define("phina.ui.HeartGuage", {
+  phina.define("phina.ui.HeartGauge", {
     // 継承
     superClass: 'phina.display.DisplayElement',
     // コンストラクタ
     init: function(options) {
-      options = ({}).$safe(options || {}, phina.ui.HeartGuage.defaults);
+      options = ({}).$safe(options || {}, phina.ui.HeartGauge.defaults);
       // 親クラス初期化
       this.superInit(options);
       // グループ
@@ -74,7 +72,7 @@ phina.namespace(function() {
     /**
      * ハートを作成して返す
      * @instance
-     * @memberof phina.ui.HeartGuage
+     * @memberof phina.ui.HeartGauge
      *
      * @param {string} type - ハートのタイプ empty or other
      * @return {object} HeartShape型オプジェクト
@@ -92,11 +90,10 @@ phina.namespace(function() {
     /**
      * ハートを配置する
      * @instance
-     * @memberof phina.ui.HeartGuage
+     * @memberof phina.ui.HeartGauge
      *
      * @param {object} group - ハートグループ
      */
-    // ハート配置
     reposition: function(group) {
       var col = this.col;
       var grid = this.grid;
@@ -113,7 +110,7 @@ phina.namespace(function() {
     /**
      * ダメージ処理
      * @instance
-     * @memberof phina.ui.HeartGuage
+     * @memberof phina.ui.HeartGauge
      *
      * @param {number} value - ダメージ値
      */
@@ -153,7 +150,7 @@ phina.namespace(function() {
     /**
      * 回復処理
      * @instance
-     * @memberof phina.ui.HeartGuage
+     * @memberof phina.ui.HeartGauge
      *
      * @param {number} value - 回復値
      */
@@ -195,7 +192,7 @@ phina.namespace(function() {
     /**
      * ハートの最大個数を増やす
      * @instance
-     * @memberof phina.ui.HeartGuage
+     * @memberof phina.ui.HeartGauge
      */
     // ハート最大値を増やす
     gainHeart: function() {
@@ -213,7 +210,7 @@ phina.namespace(function() {
     /**
      * 満タンかどうかを返す
      * @instance
-     * @memberof phina.ui.HeartGuage
+     * @memberof phina.ui.HeartGauge
      *
      * @param {boolean} value - 満タンかどうか
      */
@@ -224,7 +221,7 @@ phina.namespace(function() {
     /**
      * 空かどうかを返す
      * @instance
-     * @memberof phina.ui.HeartGuage
+     * @memberof phina.ui.HeartGauge
      *
      * @param {boolean} value - 空かどうか
      */
