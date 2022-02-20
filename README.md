@@ -63,6 +63,10 @@ Self-made extension classes for phina.js
 
 ### phina.ui.HeartGuage
 
+![hg-sample](https://alkn203.github.io/phina-extensions/images/hg-sample.png)
+
+[https://runstant.com/alkn203/projects/e6182e2a](https://runstant.com/alkn203/projects/e6182e2a)
+
 ### phina.ui.TimerGauge
 
 ### phina.util.Map
