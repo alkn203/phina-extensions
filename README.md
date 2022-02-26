@@ -69,6 +69,10 @@ Self-made extension classes for phina.js
 
 ### phina.ui.TimerGauge
 
+![tg-sample](https://alkn203.github.io/phina-extensions/images/tg-sample.png)
+
+[https://runstant.com/alkn203/projects/22e02fd8](https://runstant.com/alkn203/projects/22e02fd8)
+
 ### phina.util.Map
 
 # LICENSE
