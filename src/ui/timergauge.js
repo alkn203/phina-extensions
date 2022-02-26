@@ -6,8 +6,10 @@ phina.namespace(function() {
    * @extends phina.ui.Gauge
    *
    * @example
-   * // グローバルに展開
-   * phina.globalize();
+   * var gauge = phina.ui.TimerGauge({
+   *   limitTime: 30,
+   * }).addChildTo(this);
+   * gauge.setPosition(this.gridX.center(), this.gridY.center());
    *
    * @param {object} [options] - phina.ui.Gaugeのoptionsと同じ
    * @param {number} [options.limitTime=60] - 制限時間
