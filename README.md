@@ -75,5 +75,9 @@ Self-made extension classes for phina.js
 
 ### phina.util.Map
 
+![map-sample](https://alkn203.github.io/phina-extensions/images/map-sample.png)
+
+[https://runstant.com/alkn203/projects/05d8a818](https://runstant.com/alkn203/projects/05d8a818)
+
 # LICENSE
 MIT
