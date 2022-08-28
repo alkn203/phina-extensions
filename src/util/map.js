@@ -79,6 +79,14 @@ phina.namespace(function() {
       // マップ作成
       this._createMap();
     },
+    /** 
+     * タイルを全て消去する 
+     * @instance 
+     * @memberof phina.util.Map  
+     */ 
+    clear: function() {
+      this.children.clear();
+    },
     /**
      * 座標からマップとの衝突判定を行う
      * @instance
@@ -122,6 +130,17 @@ phina.namespace(function() {
       var j = (y / this.tileHeight) | 0;
       return this._mapData[j * this.maxPerLine + i];
     },
+    /** 
+     * 指定されたベクトルインデックスのタイルが何か調べる 
+     * @instance 
+     * @memberof phina.util.Map 
+     * 
+     * @param {object} vec - Vector2オブジェクト  
+     * @return {number} タイル番号 
+     */ 
+    checkTileByVec: function(vec) { 
+      return this._mapData[vec.y * this.maxPerLine + vec.x]; 
+    }, 
     /**
      * 指定されたインデックスのタイルが何か調べる
      * @instance
@@ -148,6 +167,7 @@ phina.namespace(function() {
       var i = (x / this.tileWidth) | 0;
       var j = (y / this.tileHeight) | 0;
       this._mapData[j * this.maxPerLine + i] = tile;
+      this._createMap();
     },
     /**
      * 指定されたインデックスのタイルを更新する
@@ -160,6 +180,7 @@ phina.namespace(function() {
      */
     setTileByIndex: function(i, j, tile) {
       this._mapData[j * this.maxPerLine + i] = tile;
+      this._createMap();
     },
     /**
      * 指定された座標の子要素を得る
