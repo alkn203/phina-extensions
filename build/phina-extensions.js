@@ -1108,7 +1108,7 @@ phina.namespace(function() {
       return this._mapData[j * this.maxPerLine + i];
     },
     /** 
-     * 指定されたベクトルインデックスのタイルが何か調べる 
+     * 指定されたベクトルインデックスのタイルを調べる 
      * @instance 
      * @memberof phina.util.Map 
      * 
