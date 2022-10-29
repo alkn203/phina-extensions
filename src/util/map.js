@@ -181,6 +181,7 @@ phina.namespace(function() {
     setTileByIndex: function(i, j, tile) {
       this._mapData[j * this.maxPerLine + i] = tile;
       this._createMap();
+    },
     /**
      * 指定されたインデックスのタイルを更新する
      * @instance
@@ -207,9 +208,6 @@ phina.namespace(function() {
       var j = (y / this.tileHeight) | 0;
       return this.children[j * this.maxPerLine + i];
     },
-    /**
-     * 子要素を得る（インデックスから）
-     */
     /**
      * 指定されたインデックスの子要素を得る
      * @instance
