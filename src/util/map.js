@@ -181,6 +181,17 @@ phina.namespace(function() {
     setTileByIndex: function(i, j, tile) {
       this._mapData[j * this.maxPerLine + i] = tile;
       this._createMap();
+    /**
+     * 指定されたインデックスのタイルを更新する
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {object} vec - Vector2オブジェクト
+     * @param {number} tile - タイル番号
+     */
+    setTileByVec: function(vec, tile) {
+      this._mapData[vec.y * this.maxPerLine + vec.x] = tile;
+      this._createMap();
     },
     /**
      * 指定された座標の子要素を得る
