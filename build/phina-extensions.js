@@ -1197,6 +1197,19 @@ phina.namespace(function() {
     getChildByIndex: function(i, j) {
       return this.children[j * this.maxPerLine + i];
     },
+    /**
+     * 座標値からインデックスを得る
+     * @instance
+     * @memberof phina.util.Map
+     *
+     * @param {Vector2} vec - 座標値
+     * @return {Vector2} インデックス
+     */
+    coordToIndex: function(vec) {
+      var x = Math.floor(vec.x / this.tileWidth);
+      var y = Math.floor(vec.y / this.tileHeight);
+      return Vector2(x, y);
+    },
     // マップ作成
     _createMap: function() {
       var tw = this.tileWidth;
