@@ -2,6 +2,5 @@ node_modules/
 deploy.sh
 package-lock.json
 package.json
-deploy.sh
 gulpfile.js
 jsdoc.sh
