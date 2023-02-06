@@ -24,7 +24,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-shell": "^0.8.0",
     "gulp-uglify": "^3.0.2",
-    "jsdoc": "^3.6.7",
+    "jsdoc": "^3.6.11",
     "minami": "^1.2.3"
   }
 }
